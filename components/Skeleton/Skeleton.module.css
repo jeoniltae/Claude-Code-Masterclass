@@ -1,0 +1,49 @@
+@reference "../../app/globals.css";
+
+.skeleton {
+  @apply w-full max-w-2xl rounded-lg border border-lighter bg-light p-8 sm:p-16;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.header {
+  @apply flex items-center gap-8 mb-16;
+}
+
+.avatar {
+  @apply size-24 sm:size-32 shrink-0 rounded-full bg-body/20;
+}
+
+.headerLines {
+  @apply flex flex-1 flex-col gap-8;
+}
+
+.body {
+  @apply flex flex-col gap-8;
+}
+
+.line {
+  @apply h-6 rounded-md bg-body/20;
+}
+
+.lineThick {
+  @apply h-8 rounded-md bg-body/20;
+}
+
+.short {
+  @apply w-5/6;
+}
+
+.shorter {
+  @apply w-3/4;
+}
+
+/* defined locally: CSS Modules renames keyframes, so Tailwind's animate-pulse can't find them */
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
